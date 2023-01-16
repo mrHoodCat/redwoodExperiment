@@ -9,7 +9,6 @@ export const handler = async (
   event: APIGatewayProxyEvent,
   context: Context
 ) => {
-
   const forgotPasswordOptions: DbAuthHandlerOptions['forgotPassword'] = {
     // handler() is invoked after verifying that a user was found with the given
     // username. This is where you can send the user an email with a link to
@@ -24,7 +23,7 @@ export const handler = async (
     // address in a toast message so the user will know it worked and where
     // to look for the email.
     handler: (user) => {
-      return user
+      return false
     },
 
     // How long the resetToken is valid for, in seconds (default is 24 hours)
